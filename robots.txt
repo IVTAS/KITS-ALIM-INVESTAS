@@ -1,0 +1,6 @@
+# robots.txt simplifié pour Kits Alimentaires
+
+User-agent: *
+Disallow:
+
+Sitemap: https://www.kitsalimentaires.com/sitemap.xml

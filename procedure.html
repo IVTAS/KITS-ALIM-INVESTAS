@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Procédure - KITS ALIMENTAIRES</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #001a33;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #tab-content {
+        width: 90%;
+        max-width: 900px;
+        padding: 20px;
+        margin: 20px 0;
+        background: #001a33;
+        border-radius: 12px;
+        box-sizing: border-box;
+      }
+
+      .section {
+        background: #c8e6c9;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        overflow: hidden;
+      }
+
+      .section-header {
+        padding: 15px 20px;
+        font-weight: bold;
+        font-size: 22px; /* harmonisé avec Avantages */
+        color: #000;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .section-body {
+        display: none;
+        background: #001a33;
+        color: #fff;
+        padding: 20px;
+        font-size: 20px; /* harmonisé avec Avantages */
+        line-height: 1.8em; /* espacement confortable */
+      }
+
+      .section-body ul,
+      .section-body ol {
+        margin-left: 25px;
+        font-size: 20px; /* uniformisé */
+      }
+
+      .section-body ul li {
+        margin-bottom: 12px; /* aérer les éléments de la liste */
+      }
+
+      .section-body ol.etapes li {
+        margin-bottom: 15px; /* espacement entre chaque étape */
+      }
+
+      .toggle-btn {
+        font-weight: bold;
+        font-size: 22px;
+        user-select: none;
+      }
+
+      .gold-bold {
+        color: #ffd700;
+        font-weight: bold;
+      }
+
+      .final-gold {
+        color: #ffd700;
+        font-weight: bold;
+        margin-top: 10px;
+        display: block;
+        font-size: 18px; /* lisible */
+      }
+
+      /* Responsive */
+      @media (max-width: 680px) {
+        #tab-content {
+          width: 95%;
+          padding: 15px;
+        }
+        .section-header {
+          font-size: 20px;
+        }
+        .section-body {
+          font-size: 18px;
+          line-height: 1.6em;
+        }
+        .section-body ul,
+        .section-body ol {
+          font-size: 18px;
+        }
+        .toggle-btn {
+          font-size: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="tab-content">
+      <!-- RAPPEL IMPORTANT -->
+      <div class="section">
+        <div class="section-header">
+          <span>RAPPEL IMPORTANT</span>
+          <span class="toggle-btn">+</span>
+        </div>
+        <div class="section-body">
+          <span class="gold-bold">INVESTAS International</span> peut vous livrer
+          les produits quelque soit l'endroit où vous vous trouvez dans un pays
+          donné via ses canaux de distribution.<br /><br />
+          Il n’est donc pas obligatoire pour
+          <span class="gold-bold">INVESTAS International</span> d'avoir une
+          enseigne fixe dans une zone donnée.<br /><br />
+          Nos enseignes (<span class="gold-bold">Mini-Markets</span>) n’ont pas
+          vocation à vendre des produits aux clients, ce sont juste des zones de
+          livraisons et de récupération des Kits commandés.<br /><br />
+          L'essentiel des commandes et transactions se font de façon
+          dématérialisée sur notre site Web.
+        </div>
+      </div>
+
+      <!-- CONDITIONS D’INSTALLATION -->
+      <div class="section">
+        <div class="section-header">
+          <span>CONDITIONS D’INSTALLATION</span>
+          <span class="toggle-btn">+</span>
+        </div>
+        <div class="section-body">
+          <ul>
+            <li>
+              <span class="gold-bold">Restaurants :</span> Minimum 250 Membres
+              Actifs dans la zone considérée.
+            </li>
+            <li>
+              <span class="gold-bold">Mini-Markets :</span> Minimum 1.500
+              Membres Actifs dans la zone considérée.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- PROCÉDURE DE COMMANDE -->
+      <div class="section">
+        <div class="section-header">
+          <span>PROCÉDURE DE COMMANDE</span>
+          <span class="toggle-btn">+</span>
+        </div>
+        <div class="section-body">
+          Nos Kits Alimentaires sont accessibles de deux façons :<br /><br />
+          <ul>
+            <li>Achat en ligne et livraison (méthode privilégiée).</li>
+            <li>
+              Récupération des produits dans une de nos enseignes ou chez nos
+              partenaires.
+            </li>
+          </ul>
+
+          <!-- Étapes intégrées dans la section -->
+          <ol class="etapes">
+            <li>
+              Le client choisit ses produits (code, référence, quantité) et
+              envoie sa commande (mail, WhatsApp, Telegram) avec adresse exacte
+              de livraison.
+            </li>
+            <li>
+              Nous soumettons un devis complet incluant frais et délais
+              (24h-48h).
+            </li>
+            <li>Le client valide ou invalide le devis.</li>
+            <li>
+              En cas de validation, il envoie une confirmation écrite avec
+              copie/photo du devis.
+            </li>
+            <li>
+              Le paiement est effectué (Wave, Mobile Money, Compte bancaire
+              Afrique ou Europe). La preuve de paiement doit être transmise.
+            </li>
+            <li>Nous confirmons la commande et livrons sous 24h à 72h.</li>
+          </ol>
+
+          <span class="gold-bold">ATTENTION :</span> Pour les virements
+          bancaires, un délai de 3 à 5 jours ouvrables est nécessaire pour
+          confirmation.<br /><br />
+          <span class="final-gold"
+            >En cas d'indisponibilité du produit, le remboursement est
+            automatique et total.</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Accordéon
+      const sections = document.querySelectorAll(".section");
+      sections.forEach((section) => {
+        const header = section.querySelector(".section-header");
+        const body = section.querySelector(".section-body");
+        const btn = header.querySelector(".toggle-btn");
+
+        header.addEventListener("click", () => {
+          const isOpen = body.style.display === "block";
+          sections.forEach((s) => {
+            s.querySelector(".section-body").style.display = "none";
+            s.querySelector(".toggle-btn").textContent = "+";
+          });
+          if (!isOpen) {
+            body.style.display = "block";
+            btn.textContent = "−";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

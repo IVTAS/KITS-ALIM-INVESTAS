@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Promotions et Activités - KITS ALIMENTAIRES</title>
+    <meta
+      name="description"
+      content="Découvrez les promotions et activités des Kits Alimentaires d'INVESTAS International. Profitez des offres spéciales, des Kits prédéfinis et de produits alimentaires à prix réduits."
+    />
+    <meta
+      name="keywords"
+      content="Kits Alimentaires, Promotions, Offres spéciales, Investas International, Produits Prédéfinis, Activités, Économies"
+    />
+    <meta name="robots" content="index, follow" />
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #001a33;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #tab-content {
+        width: 90%;
+        max-width: 900px;
+        padding: 20px;
+        margin: 20px 0;
+        background: #001a33;
+        border-radius: 12px;
+        box-sizing: border-box;
+      }
+
+      .section {
+        background: #c8e6c9;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        overflow: hidden;
+      }
+      .section-header {
+        padding: 15px 20px;
+        font-weight: bold;
+        font-size: 22px; /* harmonisé */
+        color: #000;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .section-body {
+        display: none;
+        background: #001a33;
+        color: #fff;
+        padding: 20px;
+        font-size: 20px; /* harmonisé */
+        line-height: 1.8em;
+      }
+      .section-body ul {
+        margin-left: 25px;
+        font-size: 20px; /* harmonisé */
+      }
+      .toggle-btn {
+        font-weight: bold;
+        font-size: 22px; /* harmonisé */
+        user-select: none;
+      }
+      .gold-bold {
+        color: #ffd700;
+        font-weight: bold;
+      }
+
+      /* Responsive */
+      @media (max-width: 680px) {
+        #tab-content {
+          width: 95%;
+          padding: 15px;
+        }
+        .section-header {
+          font-size: 20px;
+        }
+        .section-body {
+          font-size: 18px;
+          line-height: 1.6em;
+        }
+        .section-body ul {
+          font-size: 18px;
+        }
+        .toggle-btn {
+          font-size: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="tab-content">
+      <!-- PROMOTIONS GÉNÉRALES -->
+      <div class="section">
+        <div class="section-header">
+          <span>PROMOTIONS GÉNÉRALES</span>
+          <span class="toggle-btn">+</span>
+        </div>
+        <div class="section-body">
+          Les produits en promotion sont spécifiés par pays ou région et ont une
+          durée limitée.<br /><br />
+          Consultez régulièrement nos barres déroulantes sur la page
+          d'accueil.<br /><br />
+          Nos promotions sont en général répertoriées par pays et/ou région :<br /><br />
+          <span class="gold-bold">SPÉCIALE PROMO KITS PRÉDÉFINIS</span>
+          :<br /><br />
+          *(WEEK OU MENSUEL) KITS PRÉDÉFINIS*
+          <ul>
+            <li>Pays : Côte d'Ivoire</li>
+            <li>Début : 25 Septembre 2025</li>
+            <li>Fin : 15 Octobre 2025</li>
+            <li>
+              <span class="gold-bold">Total Minimum :</span> à partir de 15.000
+              fcfa
+            </li>
+          </ul>
+          <br />
+          <span class="gold-bold"
+            >Produits minimum Prédéfinis dans le Kit :</span
+          ><br />
+          Ce minimum de produits doit être présent dans ces Kits Prédéfinis
+          Week.<br /><br />
+          <span class="gold-bold">IMPORTANT :</span><br />
+          Vous pouvez ajouter des produits supplémentaires selon vos besoins
+          tout en respectant le minimum.<br /><br />
+          Pour les tarifs, consultez notre Tableau Alimentaire (onglet Achats) :
+          <ul>
+            <li>2 Poulets de chair ou pondeuses (Cat A/B/C)</li>
+            <li>Huile Aya 1 à 5 litres</li>
+            <li>4,5 à 25 kg riz Maman ou Rizière</li>
+            <li>Spaghetti Maman ou Alyssa, 4 sachets de 200 gr</li>
+            <li>Tomate pâte 1 pot Top chef ou Salsa 370 gr</li>
+            <li>Lait Laity, Nido, Bonnet Rouge, 6 sachets de 16 gr</li>
+            <li>1 Plateau d'œufs</li>
+          </ul>
+          <br />
+          <span class="gold-bold">INVESTAS</span> lutte contre la vie chère.
+        </div>
+      </div>
+
+      <!-- ACTIVITÉS -->
+      <div class="section">
+        <div class="section-header">
+          <span>ACTIVITÉS</span>
+          <span class="toggle-btn">+</span>
+        </div>
+        <div class="section-body">
+          <ul>
+            <li>Sponsoring : à venir</li>
+            <li>Foires : à venir</li>
+            <li>Festival : à venir</li>
+            <li>Happy New Year : à venir</li>
+            <li>Bonnes affaires : à venir</li>
+          </ul>
+          Consultez quotidiennement nos barres déroulantes sur la page
+          d'accueil.
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Accordéon : une seule section ouverte à la fois
+      const sections = document.querySelectorAll(".section");
+      sections.forEach((section) => {
+        const header = section.querySelector(".section-header");
+        const body = section.querySelector(".section-body");
+        const btn = header.querySelector(".toggle-btn");
+
+        header.addEventListener("click", () => {
+          const isOpen = body.style.display === "block";
+          sections.forEach((s) => {
+            s.querySelector(".section-body").style.display = "none";
+            s.querySelector(".toggle-btn").textContent = "+";
+          });
+          if (!isOpen) {
+            body.style.display = "block";
+            btn.textContent = "−";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

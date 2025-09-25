@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Index Maître - KITS ALIMENTAIRES</title>
+    <style>
+      :root {
+        --ballon-width: 900px;
+        --ballon-height: 500px;
+        --img-size: 40px;
+        --audio-size: 20px;
+      }
+      body {
+        margin: 0 !important;
+        font-family: Arial, sans-serif !important;
+        background: linear-gradient(135deg, #001a33, #003366) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        color: #fff !important;
+        overflow-x: hidden !important;
+        min-height: 100vh !important;
+      }
+      header,
+      footer {
+        width: 100% !important;
+        padding: 12px !important;
+        text-align: center !important;
+        background: linear-gradient(to right, #0f2b50, #1c3c72) !important;
+        color: #fff !important;
+      }
+      .header-subtitle {
+        display: block !important;
+        color: #fff !important;
+        font-size: 16px !important;
+        margin-top: 5px !important;
+      }
+      .footer-email {
+        display: block !important;
+        color: #ffd700 !important;
+        margin-top: 5px !important;
+        font-weight: bold !important;
+        font-size: 14px !important;
+      }
+      .marquee-top,
+      .marquee-bottom {
+        width: 100% !important;
+        overflow: hidden !important;
+        background: #002244 !important;
+        font-weight: bold !important;
+        white-space: nowrap !important;
+        box-sizing: border-box !important;
+        padding: 8px 0 !important;
+        position: relative !important;
+      }
+      .marquee-top span {
+        color: #00ff00 !important;
+        display: inline-block !important;
+        padding-left: 0 !important;
+        font-size: 16px !important;
+        animation: marqueeTop 40s linear infinite !important;
+      }
+      .marquee-bottom span {
+        color: #ffd700 !important;
+        display: inline-block !important;
+        padding-left: 0 !important;
+        font-size: 16px !important;
+        animation: marqueeBottom 40s linear infinite !important;
+      }
+      @keyframes marqueeTop {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+      @keyframes marqueeBottom {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+      .ballon-container {
+        position: relative !important;
+        width: var(--ballon-width) !important;
+        height: var(--ballon-height) !important;
+        margin: 50px 0 !important;
+      }
+      .ballon {
+        position: relative !important;
+        width: 100% !important;
+        height: 100% !important;
+        border-radius: 50% / 50% !important;
+        overflow: hidden !important;
+        background: linear-gradient(
+          to right,
+          #a8d5a2 40%,
+          #001f4d 40%
+        ) !important;
+      }
+      .ballon-container img {
+        position: absolute !important;
+        width: var(--img-size) !important;
+        height: var(--img-size) !important;
+        object-fit: cover !important;
+        border-radius: 12px !important;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4) !important;
+        transition: transform 0.5s !important;
+        z-index: 3 !important;
+        cursor: pointer !important;
+        max-width: none !important;
+      }
+      .ballon-container img:hover {
+        transform: scale(1.3) !important;
+        z-index: 5 !important;
+      }
+      .tabs-inner {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        pointer-events: none !important;
+      }
+      .tabs-inner div {
+        position: absolute !important;
+        background: #fff !important;
+        color: #000 !important;
+        padding: 6px 12px !important;
+        border-radius: 12px !important;
+        font-weight: bold !important;
+        cursor: pointer !important;
+        text-align: center !important;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3) !important;
+        font-size: 14px !important;
+        white-space: nowrap !important;
+        pointer-events: auto !important;
+      }
+      .tabs-inner div.active {
+        background: #ffd700 !important;
+        color: #000 !important;
+      }
+      #contenu-onglet {
+        width: 90% !important;
+        max-width: 900px !important;
+        padding: 20px !important;
+        margin: 20px 0 !important;
+        box-sizing: border-box !important;
+      }
+      #audio-btn {
+        position: fixed !important;
+        top: 15px !important;
+        right: 15px !important;
+        width: var(--audio-size) !important;
+        height: var(--audio-size) !important;
+        border-radius: 50% !important;
+        border: none !important;
+        background: #ffd700 !important;
+        color: #000 !important;
+        font-weight: bold !important;
+        cursor: pointer !important;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4) !important;
+        z-index: 9999 !important;
+        font-size: 14px !important;
+        line-height: 20px !important;
+        text-align: center !important;
+      }
+      #audio-btn:hover {
+        background: #ffc107 !important;
+      }
+      #compteur-btn-discret {
+        position: fixed !important;
+        bottom: 15px !important;
+        right: 15px !important;
+        background: #ffd700 !important;
+        color: #000 !important;
+        border: none !important;
+        border-radius: 50% !important;
+        width: 30px !important;
+        height: 30px !important;
+        font-size: 14px !important;
+        font-weight: bold !important;
+        cursor: pointer !important;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4) !important;
+        z-index: 9999 !important;
+      }
+      @media (max-width: 920px) {
+        :root {
+          --ballon-width: 600px;
+          --ballon-height: 350px;
+          --img-size: 30px;
+        }
+      }
+      @media (max-width: 680px) {
+        :root {
+          --ballon-width: 100%;
+          --ballon-height: 300px;
+          --img-size: 25px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img
+        src="2025-INVESTAS.jpg"
+        alt="Logo"
+        style="height: 50px; vertical-align: middle"
+      />
+      <span
+        style="
+          font-weight: bold;
+          margin-left: 10px;
+          color: #ffd700;
+          font-size: 22px;
+        "
+        >KITS ALIMENTAIRES À PRIX RÉDUITS 🥇</span
+      >
+      <span class="header-subtitle">International Investment Association</span>
+    </header>
+    <div class="marquee-top">
+      <span
+        >🥦🥩🍚 Bienvenue sur la plateforme KITS ALIMENTAIRES — Profitez de prix
+        réduits sur vos produits essentiels 🥬🍗🍅</span
+      >
+    </div>
+    <div class="ballon-container">
+      <div class="ballon"></div>
+      <img src="ORDINATEUR-PORTABLE.jpg" />
+      <img src="LAVE-VAISSELLES.jpg" />
+      <img src="MACHINE-A-LAVER.jpg" />
+      <img src="RIZ.jpg" />
+      <img src="HUILE.jpg" />
+      <img src="SPAGHETTI.jpg" />
+      <img src="OEUF.jpg" />
+      <img src="VINS.jpg" />
+      <img src="VIANDE-BOEUF.jpg" />
+      <img src="POISSON.jpg" />
+      <img src="POULET.jpg" />
+      <img src="PIMENT-FRAIS.jpg" />
+      <img src="TOMATE-FRAICHE.jpg" />
+      <img src="BANANE.jpg" />
+      <img src="MANIOC.jpg" />
+      <img src="GOMBO.jpg" />
+      <div class="tabs-inner" id="tabs">
+        <div data-onglet="accueil">Accueil</div>
+        <div data-onglet="à-propos">À propos</div>
+        <div data-onglet="avantages">Avantages</div>
+        <div data-onglet="strategie">Stratégie</div>
+        <div data-onglet="procedure">Procédure</div>
+        <div data-onglet="acheter">Acheter</div>
+        <div data-onglet="produits">Produits</div>
+        <div data-onglet="promo">Promo</div>
+        <div data-onglet="partenaires">Partenaires</div>
+      </div>
+    </div>
+    <div class="marquee-bottom">
+      <span
+        >🍇🥕 Offres Spéciales — 2% de Réduction Supplémenstaire sur vos kits
+        Week ou Mensuels du 25 Septembre au 15 Octobre 2025.! 🥖🍎</span
+      >
+    </div>
+    <div id="contenu-onglet"></div>
+    <footer>
+      © 2025 KITS ALIMENTAIRES — INVESTAS
+      <span class="footer-email">egied2024@gmail.com</span>
+    </footer>
+    <audio id="site-audio" src="AUDIO-KIT-ALIM.mp3"></audio>
+    <button id="audio-btn">▶</button>
+
+    <!-- Nouveau bouton discret pour le compteur -->
+    <button id="compteur-btn-discret">📊</button>
+
+    <script>
+      const container = document.querySelector(".ballon-container");
+      const images = Array.from(container.querySelectorAll("img"));
+      let width = container.offsetWidth,
+        height = container.offsetHeight;
+      let a = width / 2 - 30,
+        b = height / 2 - 30,
+        cx = width / 2,
+        cy = height / 2;
+      const n = images.length;
+      let angles = images.map((_, i) => (2 * Math.PI * i) / n);
+      function animate() {
+        images.forEach((img, i) => {
+          angles[i] += 0.0002;
+          const x = cx + a * Math.cos(angles[i]) - img.offsetWidth / 2;
+          const y = cy + b * Math.sin(angles[i]) - img.offsetHeight / 2;
+          img.style.left = `${x}px`;
+          img.style.top = `${y}px`;
+        });
+        requestAnimationFrame(animate);
+      }
+      animate();
+      const tabs = Array.from(document.querySelectorAll(".tabs-inner div"));
+      const tabCount = tabs.length;
+      const ellipseInnerA = a * 0.6,
+        ellipseInnerB = b * 0.6,
+        cxInner = cx,
+        cyInner = cy;
+      const anglesTab = tabs.map((_, i) => (2 * Math.PI * i) / tabCount);
+      function positionTabs() {
+        tabs.forEach((tab, i) => {
+          const angle = anglesTab[i] - Math.PI / 2;
+          const x =
+            cxInner + ellipseInnerA * Math.cos(angle) - tab.offsetWidth / 2;
+          const y =
+            cyInner + ellipseInnerB * Math.sin(angle) - tab.offsetHeight / 2;
+          tab.style.left = `${x}px`;
+          tab.style.top = `${y}px`;
+        });
+      }
+      positionTabs();
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          tabs.forEach((t) => t.classList.remove("active"));
+          tab.classList.add("active");
+          const onglet = tab.getAttribute("data-onglet");
+          fetch(`${onglet}.html`)
+            .then((r) => r.text())
+            .then((html) => {
+              document.querySelector("#contenu-onglet").innerHTML = html;
+              const sections = document.querySelectorAll(
+                "#contenu-onglet .section"
+              );
+              sections.forEach((section) => {
+                const header = section.querySelector(".section-header"),
+                  body = section.querySelector(".section-body"),
+                  btn = header ? header.querySelector(".toggle-btn") : null;
+                if (header && body && btn) {
+                  header.addEventListener("click", () => {
+                    const isOpen = body.style.display === "block";
+                    sections.forEach((s) => {
+                      s.querySelector(".section-body").style.display = "none";
+                      s.querySelector(".toggle-btn").textContent = "+";
+                    });
+                    if (!isOpen) {
+                      body.style.display = "block";
+                      btn.textContent = "−";
+                    }
+                  });
+                }
+              });
+            });
+        });
+      });
+      tabs[0].click();
+      images.forEach((img) => {
+        img.addEventListener("click", () => {
+          const overlay = document.createElement("div");
+          overlay.style.position = "fixed";
+          overlay.style.top = 0;
+          overlay.style.left = 0;
+          overlay.style.width = "100%";
+          overlay.style.height = "100%";
+          overlay.style.background = "rgba(0,0,0,0.8)";
+          overlay.style.display = "flex";
+          overlay.style.alignItems = "center";
+          overlay.style.justifyContent = "center";
+          overlay.style.zIndex = 9999;
+          overlay.addEventListener("click", () =>
+            document.body.removeChild(overlay)
+          );
+          const imgZoom = document.createElement("img");
+          imgZoom.src = img.src;
+          imgZoom.style.maxWidth = "80%";
+          imgZoom.style.maxHeight = "80%";
+          imgZoom.style.borderRadius = "12px";
+          imgZoom.style.boxShadow = "0 4px 20px rgba(0,0,0,0.7)";
+          overlay.appendChild(imgZoom);
+          document.body.appendChild(overlay);
+        });
+      });
+      const audio = document.getElementById("site-audio"),
+        audioBtn = document.getElementById("audio-btn");
+      let audioStarted = false;
+      document.body.addEventListener(
+        "click",
+        () => {
+          if (!audioStarted) {
+            audio.play();
+            audioBtn.textContent = "⏸";
+            audioStarted = true;
+          }
+        },
+        { once: true }
+      );
+      audioBtn.addEventListener("click", () => {
+        if (audio.paused) {
+          audio.play();
+          audioBtn.textContent = "⏸";
+        } else {
+          audio.pause();
+          audioBtn.textContent = "▶";
+        }
+      });
+      // Compteur transformé en bouton discret
+      let visites = parseInt(localStorage.getItem("visites") || "0");
+      visites++;
+      localStorage.setItem("visites", visites);
+      const compteurBtnDiscret = document.getElementById(
+        "compteur-btn-discret"
+      );
+      compteurBtnDiscret.addEventListener("click", () => {
+        const pwd = prompt("Mot de passe pour voir les visites:");
+        if (pwd === "IED2024@") {
+          alert(`Visites: ${visites}`);
+        } else {
+          alert("Mot de passe incorrect");
+        }
+      });
+    </script>
+  </body>
+</html>

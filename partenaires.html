@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Partenaires - KITS ALIMENTAIRES</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #001a33;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #tab-content {
+        width: 90%;
+        max-width: 900px;
+        padding: 20px;
+        margin: 20px 0;
+        background: #001a33;
+        border-radius: 12px;
+        box-sizing: border-box;
+      }
+
+      .section {
+        background: #c8e6c9;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        overflow: hidden;
+      }
+
+      .section-header {
+        padding: 15px 20px;
+        font-weight: bold;
+        font-size: 22px; /* harmonisé avec Avantages */
+        color: #000;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .section-body {
+        display: none;
+        background: #001a33;
+        color: #fff;
+        padding: 20px;
+        font-size: 20px; /* harmonisé avec Avantages */
+        line-height: 1.8em; /* harmonisé avec Avantages */
+      }
+
+      .section-body ul {
+        margin-left: 25px;
+        font-size: 20px; /* harmonisé avec Avantages */
+      }
+
+      .toggle-btn {
+        font-weight: bold;
+        font-size: 22px; /* harmonisé avec Avantages */
+        user-select: none;
+      }
+
+      .gold-bold {
+        color: #ffd700;
+        font-weight: bold;
+      }
+
+      @media (max-width: 680px) {
+        #tab-content {
+          width: 95%;
+          padding: 15px;
+        }
+        .section-header {
+          font-size: 20px;
+        }
+        .section-body {
+          font-size: 18px;
+          line-height: 1.6em;
+        }
+        .section-body ul {
+          font-size: 18px;
+        }
+        .toggle-btn {
+          font-size: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="tab-content">
+      <!-- Section 1 : Devenir partenaires -->
+      <div class="section">
+        <div class="section-header">
+          <span>DEVENIR PARTENAIRES</span>
+          <span class="toggle-btn">+</span>
+        </div>
+        <div class="section-body">
+          <span class="gold-bold">INVESTAS International</span> est ouvert à
+          toutes négociations de partenariats dans le domaine des
+          <span class="gold-bold"
+            >Kits Alimentaires, Techniques et Cosmétiques</span
+          >
+          pouvant permettre d'écouler des produits de bonnes qualités et
+          permettre aux populations d'acquérir des produits sains à des prix
+          réduits. <br /><br />
+          Il existe différents types de partenariats à mettre en place dans le
+          domaine des Kits ainsi que dans plusieurs autres secteurs tels que
+          l'hôtellerie, l'événementiel, la santé, l'éducation et la formation.
+        </div>
+      </div>
+
+      <!-- Section 2 : Les types de partenariats -->
+      <div class="section">
+        <div class="section-header">
+          <span>LES TYPES DE PARTENARIATS</span>
+          <span class="toggle-btn">+</span>
+        </div>
+        <div class="section-body">
+          <ul>
+            <li>
+              <span class="gold-bold">INVESTAS</span> & Producteurs, Fabricants
+            </li>
+            <li><span class="gold-bold">INVESTAS</span> & Fournisseurs</li>
+            <li>
+              <span class="gold-bold">INVESTAS</span> & Marchands, Commerçants
+            </li>
+            <li>
+              <span class="gold-bold">INVESTAS</span> & Clients (Associations,
+              Groupements, Entreprises etc.)
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Section 3 : Liste des partenaires -->
+      <div class="section">
+        <div class="section-header">
+          <span>LISTE DES PARTENAIRES</span>
+          <span class="toggle-btn">+</span>
+        </div>
+        <div class="section-body">
+          Cette liste demeure confidentielle sauf pour les partenaires qui
+          acceptent que leurs données soient divulguées officiellement.
+        </div>
+      </div>
+
+      <!-- Section 4 : Remerciements -->
+      <div class="section">
+        <div class="section-header">
+          <span>NOS REMERCIEMENTS</span>
+          <span class="toggle-btn">+</span>
+        </div>
+        <div class="section-body">
+          Nous remercions l'ensemble des partenaires qui ont accepté de nous
+          mettre à disposition leurs produits afin de lutter contre le phénomène
+          de vie chère et réduire la misère dans le monde.
+          <br /><br />
+          Nous remercions aussi l’ensemble de nos clients et membres qui
+          participent à cette noble mission.
+          <br /><br />
+          En achetant nos produits, vous participez non seulement au
+          développement de l'agriculture et du commerce équitable respectueux de
+          l'humain et de l'environnement, mais surtout à impacter fortement et
+          positivement les effets néfastes de la pauvreté dans chaque région du
+          monde.
+          <br /><br />
+          Ensemble, nous ferons reculer la misère par l'abondance des ressources
+          pour la prospérité des populations.
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Accordéon : une seule section ouverte à la fois
+      const sections = document.querySelectorAll(".section");
+      sections.forEach((section) => {
+        const header = section.querySelector(".section-header");
+        const body = section.querySelector(".section-body");
+        const btn = header.querySelector(".toggle-btn");
+
+        header.addEventListener("click", () => {
+          const isOpen = body.style.display === "block";
+          sections.forEach((s) => {
+            s.querySelector(".section-body").style.display = "none";
+            s.querySelector(".toggle-btn").textContent = "+";
+          });
+          if (!isOpen) {
+            body.style.display = "block";
+            btn.textContent = "−";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

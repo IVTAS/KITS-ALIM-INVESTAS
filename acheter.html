@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulaire d'Inscription - Kits Alimentaires</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #a8d5a2; /* vert ballon */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+      }
+      .container {
+        max-width: 900px;
+        width: 100%;
+        background: #a8d5a2;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        color: black;
+        box-sizing: border-box;
+      }
+      h2 {
+        text-align: center;
+        color: black;
+      }
+      label {
+        font-size: 16px;
+        display: block;
+        margin-top: 10px;
+        color: black;
+      }
+      input,
+      select {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        color: black;
+        background: #fff;
+      }
+      input:focus,
+      select:focus {
+        outline: none;
+        border: 2px solid red;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background: #000;
+        color: #fff;
+      }
+      table th,
+      table td {
+        border: 1px solid #fff;
+        padding: 10px;
+        text-align: center;
+      }
+      table th {
+        background: #333;
+      }
+      .btn-group {
+        text-align: center;
+        margin-top: 20px;
+      }
+      button {
+        padding: 10px 20px;
+        margin: 5px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .validate {
+        background: black;
+        color: white;
+      }
+      .cancel {
+        background: gray;
+        color: white;
+      }
+      .print {
+        background: goldenrod;
+        color: black;
+      }
+      .pdf-links {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .pdf-links a {
+        display: block;
+        margin: 5px 0;
+        font-weight: bold;
+        color: black;
+        text-decoration: none;
+      }
+      @media (max-width: 768px) {
+        table th,
+        table td {
+          font-size: 14px;
+          padding: 5px;
+        }
+        button {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Formulaire d'Inscription - Kits Alimentaires</h2>
+      <form
+        id="achatForm"
+        action="https://formsubmit.co/egied2024@gmail.com"
+        method="POST"
+      >
+        <input
+          type="hidden"
+          name="_subject"
+          value="Nouvelle commande Kits Alimentaires"
+        />
+        <input type="hidden" name="_template" value="table" />
+        <input
+          type="hidden"
+          name="_next"
+          value="https://votre-site.com/merci.html"
+        />
+
+        <label>Nom* :</label> <input type="text" name="nom" required />
+        <label>Prénom* :</label> <input type="text" name="prenom" required />
+        <label>Email* :</label> <input type="email" name="email" required />
+        <label>Téléphone* :</label>
+        <input type="text" name="telephone" required />
+        <label>WhatsApp / Telegram :</label>
+        <input type="text" name="whatsapp" />
+        <label>Pays de livraison* :</label>
+        <select name="pays" id="pays" required>
+          <option value="">-- Sélectionnez un pays --</option>
+          <option value="Côte d'Ivoire">Côte d'Ivoire</option>
+          <option value="France">France</option>
+          <option value="Ghana">Ghana</option>
+          <option value="Sénégal">Sénégal</option>
+          <option value="Togo">Togo</option>
+          <option value="Bénin">Bénin</option>
+          <option value="Mali">Mali</option>
+          <option value="Burkina">Burkina</option>
+          <option value="Niger">Niger</option>
+          <option value="Nigeria">Nigeria</option>
+          <option value="Cameroun">Cameroun</option>
+          <option value="Gabon">Gabon</option>
+          <option value="RDC">RDC</option>
+          <option value="Congo Brazzaville">Congo Brazzaville</option>
+          <option value="Afrique du Sud">Afrique du Sud</option>
+          <option value="Rwanda">Rwanda</option>
+          <option value="Guinée">Guinée</option>
+          <option value="Liberia">Liberia</option>
+          <option value="Maroc">Maroc</option>
+          <option value="Tunisie">Tunisie</option>
+          <option value="Égypte">Égypte</option>
+          <option value="Algérie">Algérie</option>
+          <option value="Centrafrique">Centrafrique</option>
+          <option value="Éthiopie">Éthiopie</option>
+          <option value="Kenya">Kenya</option>
+          <option value="Burundi">Burundi</option>
+          <option value="Belgique">Belgique</option>
+          <option value="Luxembourg">Luxembourg</option>
+          <option value="Allemagne">Allemagne</option>
+          <option value="Hollande">Hollande</option>
+          <option value="Portugal">Portugal</option>
+          <option value="Italie">Italie</option>
+          <option value="Suisse">Suisse</option>
+          <option value="Espagne">Espagne</option>
+          <option value="Russie">Russie</option>
+          <option value="Chine">Chine</option>
+          <option value="USA">USA</option>
+          <option value="Canada">Canada</option>
+          <option value="Mexique">Mexique</option>
+          <option value="Brésil">Brésil</option>
+          <option value="Argentine">Argentine</option>
+          <option value="Dubai">Dubai</option>
+          <option value="Émirats Arabes Unis">Émirats Arabes Unis</option>
+          <option value="Philippines">Philippines</option>
+          <option value="Thaïlande">Thaïlande</option>
+          <option value="Suède">Suède</option>
+          <option value="Danemark">Danemark</option>
+          <option value="Norvège">Norvège</option>
+          <option value="Japon">Japon</option>
+          <option value="Inde">Inde</option>
+          <option value="Indonésie">Indonésie</option>
+          <option value="Singapour">Singapour</option>
+          <option value="Vietnam">Vietnam</option>
+        </select>
+
+        <label>Ville de livraison* :</label>
+        <input type="text" name="ville" required />
+        <label>Adresse de livraison* :</label>
+        <input type="text" name="adresse" required />
+
+        <h3>Liste des produits</h3>
+        <table>
+          <tr>
+            <th>Référence</th>
+            <th>Nom du produit</th>
+            <th>Quantité</th>
+            <th>Prix unitaire</th>
+          </tr>
+          <tr>
+            <td><input type="text" name="reference[]" /></td>
+            <td><input type="text" name="produit[]" /></td>
+            <td><input type="number" name="quantite[]" min="1" /></td>
+            <td><input type="text" name="prix[]" /></td>
+          </tr>
+          <tr>
+            <td><input type="text" name="reference[]" /></td>
+            <td><input type="text" name="produit[]" /></td>
+            <td><input type="number" name="quantite[]" min="1" /></td>
+            <td><input type="text" name="prix[]" /></td>
+          </tr>
+          <tr>
+            <td><input type="text" name="reference[]" /></td>
+            <td><input type="text" name="produit[]" /></td>
+            <td><input type="number" name="quantite[]" min="1" /></td>
+            <td><input type="text" name="prix[]" /></td>
+          </tr>
+          <tr>
+            <td><input type="text" name="reference[]" /></td>
+            <td><input type="text" name="produit[]" /></td>
+            <td><input type="number" name="quantite[]" min="1" /></td>
+            <td><input type="text" name="prix[]" /></td>
+          </tr>
+          <tr>
+            <td><input type="text" name="reference[]" /></td>
+            <td><input type="text" name="produit[]" /></td>
+            <td><input type="number" name="quantite[]" min="1" /></td>
+            <td><input type="text" name="prix[]" /></td>
+          </tr>
+          <tr>
+            <td><input type="text" name="reference[]" /></td>
+            <td><input type="text" name="produit[]" /></td>
+            <td><input type="number" name="quantite[]" min="1" /></td>
+            <td><input type="text" name="prix[]" /></td>
+          </tr>
+          <tr>
+            <td><input type="text" name="reference[]" /></td>
+            <td><input type="text" name="produit[]" /></td>
+            <td><input type="number" name="quantite[]" min="1" /></td>
+            <td><input type="text" name="prix[]" /></td>
+          </tr>
+          <tr>
+            <td><input type="text" name="reference[]" /></td>
+            <td><input type="text" name="produit[]" /></td>
+            <td><input type="number" name="quantite[]" min="1" /></td>
+            <td><input type="text" name="prix[]" /></td>
+          </tr>
+          <tr>
+            <td><input type="text" name="reference[]" /></td>
+            <td><input type="text" name="produit[]" /></td>
+            <td><input type="number" name="quantite[]" min="1" /></td>
+            <td><input type="text" name="prix[]" /></td>
+          </tr>
+          <tr>
+            <td><input type="text" name="reference[]" /></td>
+            <td><input type="text" name="produit[]" /></td>
+            <td><input type="number" name="quantite[]" min="1" /></td>
+            <td><input type="text" name="prix[]" /></td>
+          </tr>
+        </table>
+
+        <div class="btn-group">
+          <button type="submit" class="validate">Valider</button>
+          <button type="reset" class="cancel">Annuler</button>
+          <button type="button" class="print" onclick="window.print()">
+            Imprimer
+          </button>
+        </div>
+      </form>
+
+      <!-- Bloc PDF toujours visible pour Côte d'Ivoire -->
+      <div class="pdf-links">
+        <h3>Liste des prix - Côte d'Ivoire</h3>
+        <a href="2025-KIT-ALIM-PRICES.pdf" target="_blank"
+          >📄 KIT ALIMENTAIRES</a
+        >
+        <a href="2026-PRIX-VINS-INVESTAS.pdf" target="_blank"
+          >🍷 PRIX VINS INVESTAS</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

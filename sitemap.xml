@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Index / Accueil -->
+  <url>
+    <loc>https://www.kitsalimentaires.com/index.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Accueil (redondant si index.html est la page d'accueil) -->
+  <url>
+    <loc>https://www.kitsalimentaires.com/accueil.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- À Propos -->
+  <url>
+    <loc>https://www.kitsalimentaires.com/apropos.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Avantages -->
+  <url>
+    <loc>https://www.kitsalimentaires.com/avantages.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Stratégie -->
+  <url>
+    <loc>https://www.kitsalimentaires.com/strategie.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Procédure -->
+  <url>
+    <loc>https://www.kitsalimentaires.com/procedure.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Acheter -->
+  <url>
+    <loc>https://www.kitsalimentaires.com/acheter.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Produits -->
+  <url>
+    <loc>https://www.kitsalimentaires.com/produits.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Promo -->
+  <url>
+    <loc>https://www.kitsalimentaires.com/promo.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Partenaires -->
+  <url>
+    <loc>https://www.kitsalimentaires.com/partenaires.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+</urlset>

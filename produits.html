@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Produits - KITS ALIMENTAIRES</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #001a33;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #tab-content {
+        width: 90%;
+        max-width: 900px;
+        padding: 20px;
+        margin: 20px 0;
+        background: #001a33;
+        border-radius: 12px;
+        box-sizing: border-box;
+      }
+
+      .section {
+        background: #c8e6c9;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        overflow: hidden;
+      }
+      .section-header {
+        padding: 15px 20px;
+        font-weight: bold;
+        font-size: 22px; /* harmonisé */
+        color: #000;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .section-body {
+        display: none;
+        background: #001a33;
+        color: #fff;
+        padding: 20px;
+        font-size: 20px; /* harmonisé */
+        line-height: 1.8em;
+      }
+      .section-body ul {
+        margin-left: 25px;
+        font-size: 20px; /* harmonisé */
+      }
+      .toggle-btn {
+        font-weight: bold;
+        font-size: 22px; /* harmonisé */
+        user-select: none;
+      }
+      .gold-bold {
+        color: #ffd700;
+        font-weight: bold;
+      }
+
+      /* Responsive */
+      @media (max-width: 680px) {
+        #tab-content {
+          width: 95%;
+          padding: 15px;
+        }
+        .section-header {
+          font-size: 20px;
+        }
+        .section-body {
+          font-size: 18px;
+          line-height: 1.6em;
+        }
+        .section-body ul {
+          font-size: 18px;
+        }
+        .toggle-btn {
+          font-size: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="tab-content">
+      <!-- OBJECTIF DES KITS -->
+      <div class="section">
+        <div class="section-header">
+          <span>OBJECTIF DES KITS ALIMENTAIRES</span>
+          <span class="toggle-btn">+</span>
+        </div>
+        <div class="section-body">
+          L'objectif essentiel des
+          <span class="gold-bold">Kits Alimentaires</span> est de permettre aux
+          populations d'accéder à une large gamme de produits au quotidien à
+          prix réduits.
+        </div>
+      </div>
+
+      <!-- ORIGINE DES PRODUITS -->
+      <div class="section">
+        <div class="section-header">
+          <span>ORIGINE DES PRODUITS</span>
+          <span class="toggle-btn">+</span>
+        </div>
+        <div class="section-body">
+          La majeure partie des produits que nous commercialisons dans chaque
+          pays provient des terroirs des pays concernés.<br /><br />
+          Une infime partie peut provenir de l'étranger en cas d'absence
+          périodique.
+          <span class="gold-bold">INVESTAS International</span> donne de la
+          préférence aux produits locaux pour le développement de chaque région.
+        </div>
+      </div>
+
+      <!-- NATURE DES PRODUITS -->
+      <div class="section">
+        <div class="section-header">
+          <span>NATURE DES PRODUITS</span>
+          <span class="toggle-btn">+</span>
+        </div>
+        <div class="section-body">
+          Les produits sont de natures diverses et répartis en plusieurs
+          catégories :<br /><br />
+
+          <strong class="gold-bold">Kits Alimentaires :</strong> Denrées telles
+          que riz, huile, spaghetti, lait, viandes, poissons, vins, eau, jus.<br /><br />
+
+          <strong class="gold-bold">Produits Vivriers :</strong> Fruits et
+          légumes : bananes, manioc, tomate, piment, oignon, gombo, aubergines,
+          carotte, salade, mangues, ananas, avocat.<br /><br />
+
+          <strong class="gold-bold">Kits Techniques :</strong> Informatique,
+          électroménager, Hifi, Télécoms, constructions (ciment, sable,
+          graviers), foncier, immobilier, mobiliers, panneaux solaires,
+          véhicules (voitures, tracteurs, tricycles, camions, autocars, motos),
+          éducatifs et formations, santé.<br /><br />
+
+          <strong class="gold-bold">Kits Cosmétiques :</strong> Vêtements,
+          produits de soins du corps, soins de cheveux.
+        </div>
+      </div>
+
+      <!-- TYPES DE KITS -->
+      <div class="section">
+        <div class="section-header">
+          <span>LES DIFFÉRENTS TYPES DE KITS</span>
+          <span class="toggle-btn">+</span>
+        </div>
+        <div class="section-body">
+          <strong class="gold-bold">Catégorie Composites ou Freedom :</strong>
+          ensemble de produits choisis par une personne selon ses besoins.<br /><br />
+
+          <strong class="gold-bold">Catégorie Prédéfinie :</strong> Kits
+          composés par <span class="gold-bold">INVESTAS International</span> et
+          proposés aux clients.<br /><br />
+
+          <strong>Différences :</strong>
+          <ul>
+            <li>Kits Composites : choix libre du client, disponibilité 90%.</li>
+            <br />
+            <li>
+              Kits Prédéfinis : composés, localisés, rapides à livrer,
+              disponibilité 100%, promotions souvent applicables.
+            </li>
+          </ul>
+
+          <strong>NB :</strong> Les produits sont de bonne qualité quelle que
+          soit la catégorie choisie.
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Accordéon : une seule section ouverte à la fois
+      const sections = document.querySelectorAll(".section");
+      sections.forEach((section) => {
+        const header = section.querySelector(".section-header");
+        const body = section.querySelector(".section-body");
+        const btn = header.querySelector(".toggle-btn");
+
+        header.addEventListener("click", () => {
+          const isOpen = body.style.display === "block";
+          sections.forEach((s) => {
+            s.querySelector(".section-body").style.display = "none";
+            s.querySelector(".toggle-btn").textContent = "+";
+          });
+          if (!isOpen) {
+            body.style.display = "block";
+            btn.textContent = "−";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
